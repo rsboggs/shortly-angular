@@ -1,4 +1,4 @@
-<div id='container' ng-controller="AuthController">
+<div id='container'>
   <!-- Your html here -->
   <div class="navigation">
     <ul>
@@ -8,13 +8,13 @@
       <li>
         <a href="#/shorten" class="create selected"> Shorten </a>
       </li>
-      <li>
+      <li ng-controller="AuthController">
         <a ng-click="signout()"> Log Out </a>
       </li>
     </ul> 
   </div>
-  <form>
-    <input class="text" type="text" name="url">
+  <form ng-submit="addLink()" novalidate>
+    <input ng-model="url" type="text" name="url">
     <input type="submit" value="shorten">
   </form> 
 </div>
