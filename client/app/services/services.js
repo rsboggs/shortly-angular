@@ -1,7 +1,6 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  // Your code here
   return {
     getAll: function () {
       return $http({
@@ -60,6 +59,7 @@ angular.module('shortly.services', [])
 
   var signout = function () {
     $window.localStorage.removeItem('com.shortly');
+    console.log('signed out was called!');
     $location.path('/signin');
   };
 
