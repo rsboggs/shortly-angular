@@ -3,21 +3,21 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   return {
-    getAll: function() {
+    getAll: function () {
       return $http({
         method: 'GET',
         url: '/api/links'
       })
-      .then(function(resp) {
+      .then(function (resp) {
         return resp.data;
       });
     },
-    addOne: function(url) {
+    addOne: function (url) {
       return $http({
         method: 'POST',
-        url:'/api/links',
+        url: '/api/links',
         data: url
-      }).then(function(resp) {
+      }).then(function (resp) {
         resp.status = 201;
         return resp;
       });
